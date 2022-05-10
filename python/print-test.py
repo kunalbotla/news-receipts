@@ -123,9 +123,5 @@ printer.print("Right justified!")
 # Back to left justified / normal text.
 printer.justify = adafruit_thermal_printer.JUSTIFY_LEFT
 
-# Print a UPC barcode.
-printer.print("UPCA barcode:")
-printer.print_barcode("123456789012", printer.UPC_A)
-
 # Feed a few lines to see everything.
 printer.feed(2)
