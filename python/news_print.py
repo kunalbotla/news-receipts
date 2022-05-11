@@ -97,5 +97,7 @@ def pick_rand_article(data):
     printer.print(rand_article['published_date'])
     printer.feed(1)
 
+    printer.feed(2)
+
 if __name__ == "__main__":
     execute()
