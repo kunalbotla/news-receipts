@@ -4,6 +4,7 @@ active_NYT_KEY = keys.NYT_KEY
 
 import requests
 import json
+from random import randrange
 
 def execute():
 #   print(active_NYT_KEY)
@@ -14,13 +15,16 @@ def execute():
   }
 
     nyt_out = requests.get(requestUrl, headers=requestHeaders)
+    data = json.loads(nyt_out.text)
 
-    data = json.loads(nyt_out.text) 
-    for article in data['results']:
-        print(article['title'])
-        print(article['abstract'])
-        print(article['short_url'])
-        print(article['published_date'])
+    pick_rand_article(data)
+
+def pick_rand_article(data):
+    rand_article = data['results'][randrange(len(data['results']))]
+    print(rand_article['title'])
+    print(rand_article['abstract'])
+    print(rand_article['short_url'])
+    print(rand_article['published_date'])
 
 if __name__ == "__main__":
     execute()
