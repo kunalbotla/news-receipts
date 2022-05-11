@@ -9,6 +9,6 @@ while True: # Run forever
     if GPIO.input(10) == GPIO.HIGH:
         print("Run commands")
         open_status = True
-    if GPIO.input(0) == GPIO.LOW:
+    if GPIO.input(10) == GPIO.LOW:
         print("Stop commands")
         open_status = False
