@@ -55,6 +55,17 @@ printer.warm_up()
 
 # nytimes
 
+printer.bold = True
+    printer.size = adafruit_thermal_printer.SIZE_LARGE
+    
+
+    printer.print("The New York Times")
+    printer.bold = False
+    printer.size = adafruit_thermal_printer.SIZE_SMALL
+
+    printer.print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
+    
+
 def execute():
 #   print(active_NYT_KEY)
     requestUrl = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key="+active_NYT_KEY
@@ -75,15 +86,6 @@ def pick_rand_article(data):
     print(rand_article['short_url'])
     print(rand_article['published_date'])
 
-    printer.bold = True
-    printer.size = adafruit_thermal_printer.SIZE_LARGE
-    
-
-    printer.print("The New York Times")
-    printer.bold = False
-    printer.size = adafruit_thermal_printer.SIZE_SMALL
-
-    printer.print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
 
     printer.print(rand_article['title'])
     printer.feed(1)
