@@ -19,5 +19,5 @@ while True: # Run forever
     if open_status == old_open_status:
         pass
     else:
-        if open_status == True:
+        if open_status != old_open_status, open_status == True:
             print("Run command")
