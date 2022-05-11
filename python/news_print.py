@@ -56,14 +56,14 @@ printer.warm_up()
 # nytimes
 
 printer.bold = True
-    printer.size = adafruit_thermal_printer.SIZE_LARGE
-    
+printer.size = adafruit_thermal_printer.SIZE_LARGE
 
-    printer.print("The New York Times")
-    printer.bold = False
-    printer.size = adafruit_thermal_printer.SIZE_SMALL
 
-    printer.print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
+printer.print("The New York Times")
+printer.bold = False
+printer.size = adafruit_thermal_printer.SIZE_SMALL
+
+printer.print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
     
 
 def execute():
