@@ -3,11 +3,11 @@ import RPi.GPIO as GPIO
 from news_print import print_static_page # Import Raspberry Pi GPIO library
 GPIO.setwarnings(False) # Ignore warning for now
 print(GPIO.getmode(GPIO.BOARD))
-GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
-GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+#GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+GPIO.setup3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
 
 # Set default door closed status
-old_door_status = GPIO.input(10)
+old_door_status = GPIO.input(3)
 open_status = False
 old_open_status = False
 
@@ -16,7 +16,7 @@ import news_print
 while True:
 
     # Check if door is open
-    door_status = GPIO.input(10)
+    door_status = GPIO.input(3)
 
     # Check if the status has changed
     if door_status != old_door_status:
