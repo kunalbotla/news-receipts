@@ -75,6 +75,7 @@ def pick_rand_article(data):
     print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
 
     print(rand_article['title'])
+    print(rand_article['byline'])
     print(rand_article['abstract'])
     print(rand_article['short_url'])
     print(rand_article['published_date'])
@@ -99,6 +100,7 @@ def pick_rand_article(data):
     # Print the article:
 
     printer.print(rand_article['title'])
+    printer.print(rand_article['byline'])
     printer.feed(1)
 
     printer.print(rand_article['abstract'])
