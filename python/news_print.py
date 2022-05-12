@@ -94,8 +94,7 @@ def pick_rand_article(data):
     printer.bold = True
     printer.print("The New York Times")
     printer.bold = False
-
-    printer.print("Copyright 2022 The New York Times Company. All Rights Reserved.")
+    printer.feed(1)
 
     # Print the article:
 
@@ -121,7 +120,8 @@ def pick_rand_article(data):
     # printer.printImage(Image.open('img/nytimes_data_150.png'), True)
     
     # replace with text if it doesn't work
-    printer.print("Data provided by The New York Times.")
+    printer.print("Data provided by")
+    printer.print("The New York Times.")
 
     printer.feed(1)
 
