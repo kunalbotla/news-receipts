@@ -3,19 +3,27 @@ GPIO.setwarnings(False) # Ignore warning for now
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
 
+# Set default door closed status
+old_door_status = GPIO.input(10)
 open_status = False
 old_open_status = False
 
-if GPIO.input(10) == GPIO.HIGH:
-    print("Open")
-    open_status = True
-    old_open_status = False
-if GPIO.input(10) == GPIO.LOW:
-    print("Closed")
-    open_status = False
-    old_open_status = True
+while True:
 
-if open_status == old_open_status:
-    pass
-if open_status != old_open_status and open_status == True:
-    print("Run command")
+    # Check if door is open
+    door_status = GPIO.input(10)
+
+    # Check if the status has changed
+    if door_status != old_door_status:
+        # Saved the changed state
+        old_door_status = door_status
+
+
+        if door_status == GPIO.HIGH:
+            print("Open")
+            open_status = True
+            old_open_status = False
+        if door_status == GPIO.LOW:
+            print("Closed")
+            open_status = False
+            old_open_status = True
