@@ -162,7 +162,7 @@ def print_static_page():
 #     execute()
 
 while True:
-    print("Type "A" to print a random article, "S" to print a static page, "Q" to quit.")
+    print('Type "A" to print a random article, "S" to print a static page, "Q" to quit.')
     choice = input("Enter your choice: ")
     if choice == "A":
         execute()
