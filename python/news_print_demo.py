@@ -69,8 +69,7 @@ def execute():
     pick_rand_article(data)
 
 def pick_rand_article(data):
-    rand_article = data['results'][randrange(len(data['results']))]
-    print(rand_article)
+    rand_article = {'section': 'opinion', 'subsection': '', 'title': 'The Power of Lies in an Age of Political Fiction', 'abstract': 'To the fabulist go the spoils?', 'url': 'https://www.nytimes.com/2022/05/12/opinion/marcos-philippines-putin-trump.html', 'uri': 'nyt://article/cb5d3d1a-19e8-5f89-9efa-a5979b8e67d2', 'byline': 'By Frank Bruni', 'item_type': 'Article', 'updated_date': '2022-05-12T12:00:04-04:00', 'created_date': '2022-05-12T12:00:04-04:00', 'published_date': '2022-05-12T12:00:04-04:00', 'material_type_facet': '', 'kicker': '', 'des_facet': ['internal-sub-only-nl'], 'org_facet': [], 'per_facet': ['Marcos, Imelda R', 'Marcos, Ferdinand Jr', 'Marcos, Ferdinand E', 'Putin, Vladimir V', 'Trump, Donald J', 'Herbster, Charles W', 'Pillen, Jim'], 'geo_facet': ['Philippines'], 'multimedia': [{'url': 'https://static01.nyt.com/images/2022/05/12/opinion/12bruni-image/12bruni-image-superJumbo.jpg', 'format': 'Super Jumbo', 'height': 2048, 'width': 2048, 'type': 'image', 'subtype': 'photo', 'caption': '', 'copyright': 'Ben Wiseman'}, {'url': 'https://static01.nyt.com/images/2022/05/12/opinion/12bruni-image/12bruni-image-threeByTwoSmallAt2X.jpg', 'format': 'threeByTwoSmallAt2X', 'height': 400, 'width': 600, 'type': 'image', 'subtype': 'photo', 'caption': '', 'copyright': 'Ben Wiseman'}, {'url': 'https://static01.nyt.com/images/2022/05/12/opinion/12bruni-image/12bruni-image-thumbLarge.jpg', 'format': 'Large Thumbnail', 'height': 150, 'width': 150, 'type': 'image', 'subtype': 'photo', 'caption': '', 'copyright': 'Ben Wiseman'}], 'short_url': 'https://nyti.ms/3wgzd7C'}
 
     print("The New York Times.")
     print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
