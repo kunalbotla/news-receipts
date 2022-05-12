@@ -11,6 +11,9 @@ from random import randrange
 # button
 
 import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
+GPIO.setwarnings(False) # Ignore warning for now
+GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
 
 # printer
 
@@ -76,7 +79,7 @@ def pick_rand_article(data):
     rand_article = data['results'][randrange(len(data['results']))]
 
     print("The New York Times.")
-    print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
+    print("Copyright 2022 The New York Times Company. All Rights Reserved.")
 
     print(rand_article['title'])
     print(rand_article['abstract'])
@@ -160,8 +163,6 @@ def print_static_page():
     printer.upside_down = False
     printer.justify = adafruit_thermal_printer.JUSTIFY_RIGHT
 
-# door / button
-
 # Set default door closed status
 old_door_status = GPIO.input(10)
 open_status = False
@@ -186,7 +187,6 @@ while True:
             print("Closed; placeholder for not printing; print the glass message")
             open_status = False
             old_open_status = True
-            print_static_page()
 
 if __name__ == "__main__":
     execute()
