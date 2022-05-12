@@ -8,6 +8,13 @@ import requests
 import json
 from random import randrange
 
+# button
+
+import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
+GPIO.setwarnings(False) # Ignore warning for now
+GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+
 # printer
 
 import board
@@ -155,6 +162,34 @@ def print_static_page():
 
     printer.upside_down = False
     printer.justify = adafruit_thermal_printer.JUSTIFY_RIGHT
+
+# door / button
+
+# Set default door closed status
+old_door_status = GPIO.input(10)
+open_status = False
+old_open_status = False
+
+while True:
+
+    # Check if door is open
+    door_status = GPIO.input(10)
+
+    # Check if the status has changed
+    if door_status != old_door_status:
+        # Saved the changed state
+        old_door_status = door_status
+
+
+        if door_status == GPIO.HIGH:
+            print("Open; placeholder for printing")
+            open_status = True
+            old_open_status = False
+        if door_status == GPIO.LOW:
+            print("Closed; placeholder for not printing; print the glass message")
+            open_status = False
+            old_open_status = True
+            print_static_page()
 
 if __name__ == "__main__":
     execute()
