@@ -83,12 +83,12 @@ def pick_rand_article(data):
 
     # Print the page header with logo:
 
-    import img.nytimes_185 as nytimes_185
-    printer.printBitmap(nytimes_185.width, nytimes_185.height, nytimes_185.data)
+    # import img.nytimes_185 as nytimes_185
+    # printer.printBitmap(nytimes_185.width, nytimes_185.height, nytimes_185.data)
     
     # alternate image format, png
-    # from PIL import Image
-    # printer.printImage(Image.open('img/nytimes_185.png'), True)
+    from PIL import Image
+    printer.printImage(Image.open('img/nytimes_185.png'), True)
     
     # replace with text if it doesn't work
     # printer.bold = True
@@ -137,12 +137,12 @@ def print_static_page():
 
     # Print the page header with logo:
 
-    import img.nytimes_185 as nytimes_185
-    printer.printBitmap(nytimes_185.width, nytimes_185.height, nytimes_185.data)
+    # import img.nytimes_185 as nytimes_185
+    # printer.printBitmap(nytimes_185.width, nytimes_185.height, nytimes_185.data)
     
     # alternate image format, png
-    # from PIL import Image
-    # printer.printImage(Image.open('img/nytimes_185.png'), True)
+    from PIL import Image
+    printer.printImage(Image.open('img/nytimes_185.png'), True)
     
     # replace with text if it doesn't work
     # printer.bold = True
