@@ -87,15 +87,15 @@ def pick_rand_article(data):
     # printer.printBitmap(nytimes_185.width, nytimes_185.height, nytimes_185.data)
     
     # alternate image format, png
-    from PIL import Image
-    printer.printImage(Image.open('img/nytimes_185.png'), True)
+    # from PIL import Image
+    # printer.printImage(Image.open('img/nytimes_185.png'), True)
     
     # replace with text if it doesn't work
-    # printer.bold = True
-    # printer.print("The New York Times")
-    # printer.bold = False
+    printer.bold = True
+    printer.print("The New York Times")
+    printer.bold = False
 
-    printer.print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
+    printer.print("Copyright 2022 The New York Times Company. All Rights Reserved.")
 
     # Print the article:
 
@@ -113,15 +113,15 @@ def pick_rand_article(data):
 
     # Print the page footer with data credits:
 
-    import img.nytimes_data_150 as nytimes_data_150
-    printer.printBitmap(nytimes_data_150.width, nytimes_data_150.height, nytimes_data_150.data)
+    # import img.nytimes_data_150 as nytimes_data_150
+    # printer.printBitmap(nytimes_data_150.width, nytimes_data_150.height, nytimes_data_150.data)
     
     # alternate image format, png
     # from PIL import Image
     # printer.printImage(Image.open('img/nytimes_data_150.png'), True)
     
     # replace with text if it doesn't work
-    # printer.print("Data provided by The New York Times.")
+    printer.print("Data provided by The New York Times.")
 
     printer.feed(1)
 
@@ -141,13 +141,13 @@ def print_static_page():
     # printer.printBitmap(nytimes_185.width, nytimes_185.height, nytimes_185.data)
     
     # alternate image format, png
-    from PIL import Image
-    printer.printImage(Image.open('img/nytimes_185.png'), True)
+    # from PIL import Image
+    # printer.printImage(Image.open('img/nytimes_185.png'), True)
     
     # replace with text if it doesn't work
-    # printer.bold = True
-    # printer.print("The New York Times")
-    # printer.bold = False
+    printer.bold = True
+    printer.print("The New York Times")
+    printer.bold = False
 
     printer.print("News Receipts; by Kunal Botla and Will Fosnot.")
     printer.print("Social Robots for the Ages; at NuVu Cambridge, May 2022.")
