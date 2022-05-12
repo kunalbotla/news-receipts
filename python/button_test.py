@@ -20,10 +20,10 @@ while True:
 
 
         if door_status == GPIO.HIGH:
-            print("Open")
+            print("Open; placeholder for printing")
             open_status = True
             old_open_status = False
         if door_status == GPIO.LOW:
-            print("Closed")
+            print("Closed; placeholder for not printing; print the glass message")
             open_status = False
             old_open_status = True
