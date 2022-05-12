@@ -94,6 +94,18 @@ def pick_rand_article(data):
     printer.print(rand_article['published_date'])
     printer.feed(1)
 
+    import img.nytimes_data_150 as nytimes_data_150
+    printer.printBitmap(nytimes_data_150.width, nytimes_data_150.height, nytimes_data_150.data)
+    
+    # alternate image format, png
+    # from PIL import Image
+    # printer.printImage(Image.open('img/nytimes_data_150.png'), True)
+    
+    # replace with text if it doesn't work
+    # printer.print("Data provided by The New York Times.")
+
+    printer.feed(1)
+
     printer.feed(2)
 
 if __name__ == "__main__":
