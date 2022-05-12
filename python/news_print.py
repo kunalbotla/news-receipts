@@ -75,12 +75,23 @@ def pick_rand_article(data):
     print(rand_article['short_url'])
     print(rand_article['published_date'])
 
-    printer.bold = True
+    # Print the page header with logo:
 
-    printer.print("The New York Times")
-    printer.bold = False
+    import img.nytimes_185 as nytimes_185
+    printer.printBitmap(nytimes_185.width, nytimes_185.height, nytimes_185.data)
+    
+    # alternate image format, png
+    # from PIL import Image
+    # printer.printImage(Image.open('img/nytimes_185.png'), True)
+    
+    # replace with text if it doesn't work
+    # printer.bold = True
+    # printer.print("The New York Times")
+    # printer.bold = False
 
     printer.print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
+
+    # Print the article:
 
     printer.print(rand_article['title'])
     printer.feed(1)
@@ -93,6 +104,8 @@ def pick_rand_article(data):
 
     printer.print(rand_article['published_date'])
     printer.feed(1)
+
+    # Print the page footer with data credits:
 
     import img.nytimes_data_150 as nytimes_data_150
     printer.printBitmap(nytimes_data_150.width, nytimes_data_150.height, nytimes_data_150.data)
