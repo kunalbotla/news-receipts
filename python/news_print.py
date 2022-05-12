@@ -70,10 +70,16 @@ def execute():
 
 def pick_rand_article(data):
     rand_article = data['results'][randrange(len(data['results']))]
+
+    print("The New York Times.")
+    print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
+
     print(rand_article['title'])
     print(rand_article['abstract'])
     print(rand_article['short_url'])
     print(rand_article['published_date'])
+
+    print("Data provided by The New York Times.")
 
     # Print the page header with logo:
 
@@ -120,6 +126,35 @@ def pick_rand_article(data):
     printer.feed(1)
 
     printer.feed(2)
+
+def print_static_page():
+
+    printer.upside_down = True
+    printer.justify = adafruit_thermal_printer.JUSTIFY_CENTER
+
+    
+    printer.print("Open to recive news. Data sourced from")
+
+    # Print the page header with logo:
+
+    import img.nytimes_185 as nytimes_185
+    printer.printBitmap(nytimes_185.width, nytimes_185.height, nytimes_185.data)
+    
+    # alternate image format, png
+    # from PIL import Image
+    # printer.printImage(Image.open('img/nytimes_185.png'), True)
+    
+    # replace with text if it doesn't work
+    # printer.bold = True
+    # printer.print("The New York Times")
+    # printer.bold = False
+
+    printer.print("News Receipts; by Kunal Botla and Will Fosnot.")
+    printer.print("Social Robots for the Ages; at NuVu Cambridge, May 2022.")
+
+
+    printer.upside_down = False
+    printer.justify = adafruit_thermal_printer.JUSTIFY_RIGHT
 
 if __name__ == "__main__":
     execute()
