@@ -69,7 +69,8 @@ def execute():
     pick_rand_article(data)
 
 def pick_rand_article(data):
-    rand_article = 1
+    rand_article = data['results'][randrange(len(data['results']))]
+    print(rand_article)
 
     print("The New York Times.")
     print("Copyright (c) 2022 The New York Times Company. All Rights Reserved.")
