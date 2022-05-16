@@ -14,6 +14,7 @@ According to the [Pew Research Center](https://www.pewresearch.org/journalism/wp
 * Raspberry Pi Zero WH
 * Adafruit Thermal Printer
 * NC Switch
+* [The New York Times API](https://developer.nytimes.com/docs/top-stories-product/1/routes/%7Bsection%7D.json/get)
 * 3D Printer Body
 
 The Raspberry Pi runs the thermal printer using the CircuitPython module for thermal printers on CircuitPython. 
